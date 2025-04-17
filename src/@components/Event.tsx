@@ -3,7 +3,7 @@ import { useState } from "react";
 const EventBlock = () => {
     const [isFlipped, setIsFlipped] = useState(false);
     return (
-        <div key={isFlipped} className={`flex flex-col gap-2 bg-stone-50 perspective-distant ${isFlipped ? 'animate-flip ' : 'animate-flip-rev'} shadow-md rounded-lg p-4 w-full h-full`} style={{ transformStyle: 'preserve-3d', animationFillMode: "forwards" }}
+        <div key={`${isFlipped}`} className={`flex flex-col gap-2 bg-stone-50 perspective-distant ${isFlipped ? 'animate-flip ' : 'animate-flip-rev'} shadow-md rounded-lg p-4 w-full h-full`} style={{ transformStyle: 'preserve-3d', animationFillMode: "forwards" }}
             onClick={() => setIsFlipped(!isFlipped)}
             onMouseEnter={() => setIsFlipped(true)}
             onMouseLeave={() => setIsFlipped(false)}
