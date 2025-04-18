@@ -1,7 +1,16 @@
 import { useState } from "react";
 
 const EventBlock = ({
-  frontTitle, frontChildren, backChildren, backTitle, frontButtonText, backButtonText, frontButtonAction, backButtonAction
+  frontTitle, frontChildren, backChildren, backTitle, frontButtonText, backButtonText
+}: {
+  frontTitle: string;
+  frontChildren: React.ReactNode;
+  backTitle: string;
+  backChildren: React.ReactNode;
+  frontButtonText?: string;
+  backButtonText?: string;
+  frontButtonAction?: () => void;
+  backButtonAction?: () => void;
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   return (
