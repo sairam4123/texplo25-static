@@ -1,8 +1,9 @@
 import IncreasingCountdown from './@components/Countdown'
 import EventBlock from './@components/Event'
+import eventJson from "./data/events.json"
 
 function App() {
-
+  const events = eventJson;
   return (
     <main className='h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-auto'>
     <section className='h-screen w-screen snap-start'>
@@ -75,11 +76,29 @@ Unleash your skills, make your mark, and be part of something bigger.
     <div className='flex flex-col gap-4 w-5/6 h-3/4 bg-white shadow-2xl rounded-lg items-start-safe p-4'>
     <h1 className='text-5xl text-black font-bold'>Events</h1>
     <div className='grid grid-rows-1 pb-2 grid-flow-col px-4 overflow-hidden auto-cols-[90%] md:auto-cols-[46%] lg:auto-cols-[31%] overflow-x-auto gap-8 py-9 w-full h-full'>
-      <EventBlock />
-      <EventBlock />
-      <EventBlock />
-      <EventBlock />
-      <EventBlock />
+      {events.map((event, index) => (
+        <EventBlock
+          key={index}
+          frontTitle={event.title}
+          frontChildren={<p className='text-sm text-gray-600'>{event.description}</p>}
+          backTitle={event.title}
+          backChildren={
+            <div className=''>
+            <h2 className='text-lg font-semibold'>Rules</h2>
+          <ul className='text-sm text-gray-600'>{event.rules.map(
+            (rule, index) => (
+              <li key={index} className='list-disc px-4 list-inside'>{rule}</li>
+            )
+          )}</ul>
+          {event.more_info && <><h2 className="text-lg font-semibold">More Info</h2>
+          <ul className='text-sm text-gray-600'>{event.more_info.map((m, idx) => (<li
+            key={idx} className='list-disc px-4 list-inside'>
+            {m}
+          </li>))}</ul></>}
+            </div>
+        }
+        />
+      ))}
     </div>
     </div>
     </div>
