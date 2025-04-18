@@ -19,7 +19,7 @@ function App() {
           <h2 className="lg:text-3xl md:text-2xl text-xl text-white font-bold">
             Skill. Compete. Conquer.
           </h2>
-          <h2 className="lg:text-2xl md:text-xl text-lg text-white font-semibold">
+          <h2 className="lg:text-2xl md:text-xl text-lg text-white text-center font-semibold">
             <span className="text-white font-bold"> TEXPLO'25</span> is a tech
             event that brings together students from all over the country.
           </h2>
@@ -87,9 +87,9 @@ function App() {
 
       <section className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-          <div className="flex flex-col gap-4 w-5/6 h-3/4 bg-white shadow-2xl rounded-lg items-start-safe p-4">
+          <div className="flex flex-col gap-4 w-5/6 h-2/3 md:h-3/4 bg-white shadow-2xl rounded-lg items-start-safe p-4">
             <h1 className="text-5xl text-black font-bold">Events</h1>
-            <div className="grid grid-rows-1 snap-mandatory snap-x pb-4 grid-flow-col px-4 overflow-hidden auto-cols-[90%] md:auto-cols-[46%] lg:auto-cols-[31%] overflow-x-auto gap-8 w-full h-full">
+            <div className="grid grid-rows-1 snap-mandatory snap-x pb-4 grid-flow-col px-4 overflow-hidden auto-cols-[90%] md:auto-cols-[46%] lg:auto-cols-[31%] overflow-x-auto gap-2 lg:gap-8 w-full h-full">
               {events.map((event, index) => (
                 <EventBlock
                   key={index}
