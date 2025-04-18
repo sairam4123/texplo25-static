@@ -13,13 +13,13 @@ function App() {
       </section>
       <section className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col gap-2 w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-          <h1 className="lg:text-5xl md:text-4xl text-3xl text-white font-bold">
+          <h1 className="lg:text-5xl animate-fade-in-up md:text-4xl text-shadow-lg text-3xl text-center text-balance text-white font-bold">
             Welcome to Texplo'25
           </h1>
-          <h2 className="lg:text-3xl md:text-2xl text-xl text-white font-bold">
+          <h2 className="lg:text-3xl animate-fade-in-up delay-100 md:text-2xl text-shadow-md text-xl text-white font-bold">
             Skill. Compete. Conquer.
           </h2>
-          <h2 className="lg:text-2xl md:text-xl text-lg text-white text-center font-semibold">
+          <h2 className="lg:text-2xl animate-fade-in-up delay-200 md:text-xl text-lg text-shadow-sm text-balance text-white text-center font-semibold">
             <span className="text-white font-bold"> TEXPLO'25</span> is a tech
             event that brings together students from all over the country.
           </h2>
