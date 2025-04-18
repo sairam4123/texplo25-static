@@ -5,7 +5,7 @@ import eventJson from "./data/events.json";
 function App() {
   const events = eventJson;
   return (
-    <main className="h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-auto">
+    <main className="h-screen w-screen snap-y snap-mandatory overflow-y-auto">
       <section className="h-screen w-screen snap-start">
         <div className="h-full w-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
           <IncreasingCountdown targetTimestamp={1745361000000} />

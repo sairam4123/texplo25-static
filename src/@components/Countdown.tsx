@@ -61,7 +61,7 @@ const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimesta
             {timeParts.days !== undefined && (
               <div key={timeParts.days ?? ""} className="mr-4">
                 <div className="relative h-8 flex justify-center overflow-hidden">
-                  <div className="animate-slide-up text-2xl absolute top-0">{timeParts.days}</div>
+                  <div className="animate-slide-down text-2xl absolute top-0">{timeParts.days}</div>
                   <div className="absolute top-full">{Math.floor((currentTime - (new Date().getTime() - 1000)) / (1000 * 60 * 60 * 24))}</div>
                 </div>
                 <span className="text-gray-600 text-sm">{timeParts.days === 1 ? 'day' : 'days'}</span>
@@ -70,7 +70,7 @@ const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimesta
             {timeParts.hours !== undefined && (
               <div key={timeParts.hours ?? ""} className="mr-4">
                 <div className="relative h-8 flex justify-center overflow-hidden">
-                  <div className="animate-slide-up text-2xl absolute top-0">{timeParts.hours}</div>
+                  <div className="animate-slide-down text-2xl absolute top-0">{timeParts.hours}</div>
                   <div className="absolute top-full">{Math.floor(((currentTime - (new Date().getTime() - 1000)) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}</div>
                 </div>
                 <span className="text-gray-600 text-sm">{timeParts.hours === 1 ? 'hour' : 'hours'}</span>
@@ -79,7 +79,7 @@ const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimesta
             {timeParts.minutes !== undefined && (
               <div key={timeParts.minutes ?? ""} className="mr-4">
                 <div className="relative h-8 flex justify-center overflow-hidden">
-                  <div className="animate-slide-up text-2xl absolute top-0">{timeParts.minutes}</div>
+                  <div className="animate-slide-down text-2xl absolute top-0">{timeParts.minutes}</div>
                   <div className="absolute top-full">{Math.floor(((currentTime - (new Date().getTime() - 1000)) % (1000 * 60 * 60)) / (1000 * 60))}</div>
                 </div>
                 <span className="text-gray-600 text-sm">{timeParts.minutes === 1 ? 'minute' : 'minutes'}</span>
@@ -88,7 +88,7 @@ const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimesta
             {timeParts.seconds !== undefined && (
               <div>
                 <div key={timeParts.seconds ?? ""} className="relative flex justify-center h-8 overflow-hidden">
-                  <div className="animate-slide-up text-2xl absolute top-0">{timeParts.seconds}</div>
+                  <div className="animate-slide-down text-2xl absolute top-0">{timeParts.seconds}</div>
                   <div className="absolute top-full">{Math.floor(((currentTime - (new Date().getTime() - 1000)) % (1000 * 60)) / 1000)}</div>
                 </div>
                 <span className="text-gray-600 text-sm">{timeParts.seconds === 1 ? 'sec' : 'secs'}</span>
