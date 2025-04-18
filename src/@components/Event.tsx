@@ -21,7 +21,7 @@ const EventBlock = ({
 
     <div
       // key={`${isFlipped}`}
-      className={`min-h-full perspective-[1000px] gap-2 min-w-full max-w-full w-full h-full`}
+      className={`min-h-full snap-center perspective-[1000px] gap-2 min-w-full max-w-full w-full h-full`}
       >
       <div
         className={`bg-stone-50 min-h-full ${
