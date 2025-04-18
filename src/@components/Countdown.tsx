@@ -48,10 +48,11 @@ const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimesta
     }
   }, [currentTime, targetTimestamp]);
 
+
   return (
     <div className="bg-white rounded-md space-y-4 shadow-md p-6 text-center">
-      <h2 className="text-5xl font-semibold text-gray-800 mb-4">Texplo'25 is Happening</h2>
-      <h2 className='text-3xl'>in</h2>
+      <h2 className="lg:text-6xl text-3xl font-semibold text-gray-800 mb-4">TEXPLO'25 is Happening</h2>
+      <h2 className='lg:text-3xl text-xl'>in</h2>
       <div className="flex items-center justify-center">
         {timeParts.message ? (
           timeParts.message
