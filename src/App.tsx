@@ -123,7 +123,7 @@ function App() {
             </h2>
             {/* <p className='text-xl text-white mt-4'>Join us for an unforgettable experience!</p> */}
             <button onClick={() => {
-              window.location.href = "https://www.mookambigai.ac.in/";
+              window.open("https://mookambigai.ac.in/", "_blank");
             }} className="bg-blue-500 cursor-pointer text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 mt-auto transition duration-300">
               Learn more
             </button>
