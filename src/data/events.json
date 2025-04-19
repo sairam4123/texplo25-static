@@ -46,8 +46,8 @@
     },
     {
         "id": 3,
-        "title": "QueryCraft",
-        "description": "QueryCraft is an SQL based event where participants are given a database and must write SQL queries to extract specific information. The queries will be evaluated based on correctness and efficiency.",
+        "title": "Query Craft",
+        "description": "Query Craft is an SQL based event where participants are given a database and must write SQL queries to extract specific information. The queries will be evaluated based on correctness and efficiency.",
         "rules": [
             "Solo event",
             "Queries will be evaluated based on correctness and efficiency.",

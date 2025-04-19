@@ -32,7 +32,7 @@ const EventCard = ({
         >
         {/* Front Side of the Card */}
         <div
-          className={`absolute ${isFlipped ? "opacity-50" : "opacity-100"} inset-0 p-2 backface-hidden w-full duration-[600ms] ease-in-out h-full flex flex-col gap-2`}
+          className={`absolute ${isFlipped ? "opacity-50" : "opacity-100"} transition-all inset-0 p-2 backface-hidden w-full duration-[600ms] ease-in-out h-full flex flex-col gap-2`}
           >
           <h3 className="text-2xl font-bold">{frontTitle}</h3>
           {frontChildren}
@@ -42,7 +42,7 @@ const EventCard = ({
         </div>
         {/* Back Side of the Card */}
         <div
-          className={`absolute ${isFlipped ? "opacity-100" : "opacity-50"} inset-0 p-2 backface-hidden rotate-y-180 w-full h-full duration-[600ms] ease-in-out flex flex-col gap-2`}
+          className={`absolute ${isFlipped ? "opacity-100" : "opacity-50"} transition-all inset-0 p-2 backface-hidden rotate-y-180 w-full h-full duration-[600ms] ease-in-out flex flex-col gap-2`}
           >
           <h3 className="text-2xl font-bold">{backTitle}</h3>
           {backChildren}

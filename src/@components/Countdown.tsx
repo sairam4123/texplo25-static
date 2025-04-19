@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import texploLogo from '../assets/texplo.png';
 
 interface IncreasingCountdownProps {
   targetTimestamp: number;
   beforeCountdownChildren?: React.ReactNode;
   afterCountdownChildren?: React.ReactNode;
+  countdownEndMessage?: React.ReactNode;
 }
 
 interface TimeParts {
@@ -15,7 +15,7 @@ interface TimeParts {
   message?: React.ReactNode;
 }
 
-const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimestamp, beforeCountdownChildren, afterCountdownChildren }) => {
+const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimestamp, beforeCountdownChildren, afterCountdownChildren, countdownEndMessage }) => {
   const [currentTime, setCurrentTime] = useState<number>(new Date().getTime());
   console.log(currentTime, targetTimestamp)
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -47,7 +47,7 @@ const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimesta
         console.log(days, hours, minutes, seconds)
       setTimeParts({ days, hours, minutes, seconds });
     } else {
-      setTimeParts({ message: <span className="text-green-500 font-semibold text-lg">It's ON!</span> });
+      setTimeParts({ message: countdownEndMessage ?? <span className="text-green-500 font-semibold text-lg">It's ON!</span> });
     }
   }, [currentTime, targetTimestamp]);
 

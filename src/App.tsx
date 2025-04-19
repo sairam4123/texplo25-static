@@ -178,7 +178,7 @@ function App() {
       <section className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
           <div className="flex flex-col gap-4 w-5/6 h-3/4 md:h-9/11 bg-white shadow-2xl rounded-lg items-start-safe p-4">
-            <h1 className="text-5xl text-black font-bold">Non-Technical Events</h1>
+            <h1 className="text-2xl lg:text-5xl text-black font-bold">Non-Technical Events</h1>
             <div className="grid auto-rows-[100%] grid-flow-row h-full w-full snap-y snap-mandatory overflow-y-auto">
             {[...events.entries()].map(([deptName, events]) => (
               <EventBlock
@@ -203,8 +203,13 @@ function App() {
               <h2 className="lg:text-2xl text-lg font-semibold text-shadow-sm text-shadow-black/10 text-gray-800">Registration ends</h2>
       <h2 className='lg:text-lg -mb-4 text-sm text-shadow-sm text-shadow-black/5'>in</h2>
               </div>
-            } targetTimestamp={1745326800000} />
-          <button className="bg-blue-500 cursor-pointer text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 mt-auto transition duration-300">
+            } targetTimestamp={1745326800000}
+            countdownEndMessage={
+              <span className="text-red-500 font-semibold text-lg">Registration closed.</span>
+            } />
+          <button onClick={() => {
+            window.open("https://shorturl.at/Nfnze", "_blank");
+          }} className="bg-blue-500 cursor-pointer text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 mt-auto transition duration-300">
             Register Now
           </button>
           </div>
