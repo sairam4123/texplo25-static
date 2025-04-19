@@ -1,6 +1,5 @@
 import IncreasingCountdown from "./@components/Countdown";
 import EventBlock from "./@components/EventBlock";
-import EventCard from "./@components/EventCard";
 import eventJson from "./data/events.json";
 
 function App() {
