@@ -5,9 +5,20 @@
         "description": "Participants present a paper on a topic of their choice related to technology or computer science. The presentation should be followed by a Q&A session.",
         "rules": [
             "Participants must submit a paper in advance.",
-            "Presentations should not exceed 15 minutes.",
-            "Only two participants per team. Not solo event.",
+            "Presentations should not exceed 15 minutes. (Expected 7-10 minutes)",
+            "Only two participants per team.",
             "Q&A session should not exceed 5 minutes."
+        ],
+        "dept": "IT",
+        "coordinators": [
+            {
+                "name": "John Doe",
+                "phoneNo": "1234567890"
+            },
+            {
+                "name": "Jane Smith",
+                "phoneNo": "0987654321"
+            }
         ]
     },
     {
@@ -18,6 +29,17 @@
             "Solo event",
             "Participants must solve problems in a sequential order.",
             "Participants must submit their solutions within the given time limit."
+        ],
+        "dept": "IT",
+        "coordinators": [
+            {
+                "name": "John Doe",
+                "phoneNo": "1234567890"
+            },
+            {
+                "name": "Jane Smith",
+                "phoneNo": "0987654321"
+            }
         ]
     },
     {
@@ -26,13 +48,20 @@
         "description": "QueryCraft is an SQL based event where participants are given a database and must write SQL queries to extract specific information. The queries will be evaluated based on correctness and efficiency.",
         "rules": [
             "Solo event",
-            "Participants must write SQL queries to extract information from a given database.",
             "Queries will be evaluated based on correctness and efficiency.",
             "Participants must submit their queries within the given time limit."
         ],
         "more_info": [
             "Round 1: Quiz on SQL concepts",
-            "Round 2: competitive SQL querying round"
+            "Round 2: competitive SQL querying round",
+            "Rules of Round 2: Participants will be given a database and must write SQL queries to extract specific information. The queries will be evaluated based on correctness and efficiency."
+        ],
+        "dept": "IT",
+        "coordinators": [
+            {
+                "name": "John Doe",
+                "phoneNo": "1234567890"
+            }
         ]
     }
 ]

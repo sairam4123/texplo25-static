@@ -44,13 +44,14 @@ const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimesta
         console.log(days, hours, minutes, seconds)
       setTimeParts({ days, hours, minutes, seconds });
     } else {
-      setTimeParts({ message: <span className="text-green-500 font-semibold text-lg">Reached Target!</span> });
+      setTimeParts({ message: <span className="text-green-500 font-semibold text-lg">It's ON!</span> });
     }
   }, [currentTime, targetTimestamp]);
 
 
   return (
     <div className="bg-white animate-fade-in-up rounded-md space-y-4 shadow-md p-6 text-center">
+      <img src="public/texplo.png" alt="Texplo Logo" className="mx-auto h-60 w-60 animate-fade-in-up" />
       <h2 className="lg:text-6xl text-3xl font-semibold text-shadow-sm text-shadow-black/50 text-gray-800 mb-4">TEXPLO'25 is Happening</h2>
       <h2 className='lg:text-3xl text-xl text-shadow-sm text-shadow-black/20'>in</h2>
       <div className="flex items-center justify-center">

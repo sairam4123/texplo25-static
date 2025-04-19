@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const EventBlock = ({
+const EventCard = ({
   frontTitle, frontChildren, backChildren, backTitle, frontButtonText, backButtonText
 }: {
   frontTitle: string;
@@ -56,4 +56,4 @@ const EventBlock = ({
   );
 };
 
-export default EventBlock;
+export default EventCard;

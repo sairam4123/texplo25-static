@@ -1,15 +1,35 @@
 import IncreasingCountdown from "./@components/Countdown";
-import EventBlock from "./@components/Event";
+import EventBlock from "./@components/EventBlock";
+import EventCard from "./@components/EventCard";
 import eventJson from "./data/events.json";
 
 function App() {
-  const events = eventJson;
+  const events = eventJson.reduce((acc, event) => {
+    const eventDetails = acc.get(event.dept);
+    if (eventDetails) {
+      eventDetails.push(event);
+    }
+    else {
+      acc.set(event.dept, [event]);
+    }
+    return acc;
+  }, new Map<string, typeof eventJson[number][]>());
   return (
-    <main className="h-screen w-screen snap-y snap-mandatory overflow-y-auto">
+    <main className="h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-auto">
+      <section className="w-screen sticky top-0">
+        <div className="flex h-20 md:h-14 w-full items-center px-4 justify-between bg-gradient-to-r from-blue-500 to-purple-500">
+          <img src="public/mce.jpg" alt="Texplo Logo" className="size-16 md:size-12 rounded-xl" />
+          <h1 className="text-4xl md:text-2xl text-white font-semibold">
+            TEXPLO'25
+          </h1>
+          <img src="public/texplo.png" alt="Texplo Logo" className="size-16 md:size-12" />
+        </div>
+      </section>
       <section className="h-screen w-screen snap-start">
-        <div className="h-full w-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
+        <div className="h-full w-full flex-col gap-8 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
           <IncreasingCountdown targetTimestamp={1745361000000} />
         </div>
+        
       </section>
       <section className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col gap-2 w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
@@ -29,11 +49,11 @@ function App() {
       </section>
       <section className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-          <div className="flex flex-col gap-4 w-3/4 lg:w-2/3 h-fit max-h-5/6 lg:h-1/2 bg-white shadow-2xl rounded-lg items-start-safe p-4">
+          <div className="flex flex-col gap-4 w-3/4 lg:w-2/3 h-fit max-h-5/6 lg:h-4/7 bg-white shadow-2xl rounded-lg items-start-safe p-4">
             <h1 className="lg:text-5xl md:text-4xl text-3xl text-black font-bold">
               About Texplo'25
             </h1>
-            <h2 className="lg:text-xl md:text-lg text-black text-sm font-semibold flex flex-col gap-2">
+            <h2 className="lg:text-xl md:text-lg text-black text-sm font-semibold flex flex-col gap-8">
               <span>
                 Happening offline every year, Texplo25 is more than just an
                 event — it's a knowledge-sharing playground where learning gets
@@ -58,7 +78,7 @@ function App() {
       </section>
       <section className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-          <div className="flex flex-col gap-4 w-3/4 h-fit max-h-5/6 lg:w-2/3 lg:h-1/2 bg-white shadow-2xl rounded-lg items-start-safe p-4">
+          <div className="flex flex-col gap-4 w-3/4 h-fit max-h-5/6 lg:w-2/3 lg:h-4/7 bg-white shadow-2xl rounded-lg items-start-safe p-4">
             <h1 className="lg:text-5xl md:text-4xl text-3xl text-black font-bold">
               Motivation
             </h1>
@@ -66,7 +86,7 @@ function App() {
               <span className="text-blue-500 font-bold"> TEXPLO'25</span> is
               more than just a tech event; it's a revolution in the making.
             </h2>
-            <h2 className="lg:text-lg md:text-lg text-sm text-black font-semibold flex flex-col gap-2">
+            <h2 className="lg:text-lg md:text-lg text-sm text-black font-semibold flex flex-col gap-4">
               <span>
                 We're creating a platform for students to dive into cutting-edge
                 tech events, compete with brilliant minds, and bring their ideas
@@ -87,51 +107,28 @@ function App() {
 
       <section className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-          <div className="flex flex-col gap-4 w-5/6 h-2/3 md:h-3/4 bg-white shadow-2xl rounded-lg items-start-safe p-4">
-            <h1 className="text-5xl text-black font-bold">Events</h1>
-            <div className="grid grid-rows-1 snap-mandatory snap-x pb-4 grid-flow-col px-4 overflow-hidden auto-cols-[90%] md:auto-cols-[46%] lg:auto-cols-[31%] overflow-x-auto gap-2 lg:gap-8 w-full h-full">
-              {events.map((event, index) => (
-                <EventBlock
-                  key={index}
-                  frontTitle={event.title}
-                  frontChildren={
-                    <p className="text-sm text-gray-600">{event.description}</p>
-                  }
-                  backTitle={event.title}
-                  backChildren={
-                    <div className="">
-                      <h2 className="text-lg font-semibold">Rules</h2>
-                      <ul className="text-sm text-gray-600">
-                        {event.rules.map((rule, index) => (
-                          <li
-                            key={index}
-                            className="list-disc px-4 list-inside"
-                          >
-                            {rule}
-                          </li>
-                        ))}
-                      </ul>
-                      {event.more_info && (
-                        <>
-                          <h2 className="text-lg font-semibold">More Info</h2>
-                          <ul className="text-sm text-gray-600">
-                            {event.more_info.map((m, idx) => (
-                              <li
-                                key={idx}
-                                className="list-disc px-4 list-inside"
-                              >
-                                {m}
-                              </li>
-                            ))}
-                          </ul>
-                        </>
-                      )}
-                    </div>
-                  }
-                />
-              ))}
+          <div className="flex flex-col gap-4 w-5/6 h-3/4 md:h-9/11 bg-white shadow-2xl rounded-lg items-start-safe p-4">
+            <h1 className="text-5xl text-black font-bold">Technical Events</h1>
+            <div className="grid auto-rows-[100%] grid-flow-row h-full w-full snap-y snap-mandatory overflow-y-auto">
+            {[...events.entries()].map(([deptName, events]) => (
+              <EventBlock
+                key={deptName}
+                events={events}
+                deptName={deptName}
+               />))
+            }
             </div>
           </div>
+        </div>
+      </section>
+      <section className="sticky bottom-0 w-screen">
+        <div className="flex flex-col h-18 md:h-10 w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500 -z-10">
+          <h1 className="text-base md:text-xs text-white font-semibold">
+            &copy; 2025 TEXPLO Commitee. All rights reserved.
+          </h1>
+          <h6 className="text-xs md:text-[8px] text-white font-semibold">
+            Made with ❤️ by Sairam M (Dept of IT)
+          </h6>
         </div>
       </section>
     </main>
