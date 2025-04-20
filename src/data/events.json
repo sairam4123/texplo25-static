@@ -70,11 +70,9 @@
     {
         "id": 4,
         "title": "Neural Isai",
-        "description": "Neural Isai is a music event where participants can showcase their musical talents. The event is open to all genres of music.",
+        "description": "Neural Isai is a fun music event filled with multiple rounds of trivia questions based on tamil songs and music.",
         "rules": [
-            "Participants can perform solo or in groups.",
-            "Each performance should not exceed 5 minutes.",
-            "Participants must bring their own instruments."
+            "Rules will be announced on the day of the event."
         ],
         "dept": "IT",
         "coordinators": [
@@ -87,11 +85,7 @@
                 "phoneNo": "0987654321"
             }
         ],
-        "more_info": [
-            "Round 1: Solo performance",
-            "Round 2: Group performance",
-            "Final Round: Battle of Bands"
-        ],
+        "more_info": [],
         "isTechnical": false
     }
 ]
