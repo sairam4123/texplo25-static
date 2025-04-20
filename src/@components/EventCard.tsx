@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const EventCard = ({
-  frontTitle, frontChildren, backChildren, backTitle, frontButtonText, backButtonText
+  frontTitle, frontChildren, backChildren, backTitle, frontButtonText, backButtonText, backButtonAction, frontButtonAction
 }: {
   frontTitle: string;
   frontChildren: React.ReactNode;
@@ -36,7 +36,7 @@ const EventCard = ({
           >
           <h3 className="text-2xl font-bold">{frontTitle}</h3>
           {frontChildren}
-          <button className="bg-blue-500 text-white font-semibold rounded-lg py-2 px-4 hover:bg-blue-600 mt-auto">
+          <button onClick={frontButtonAction} className="bg-blue-500 text-white font-semibold cursor-pointer rounded-lg py-2 px-4 hover:bg-blue-600 mt-auto">
             {frontButtonText ?? "Learn More"}
           </button>
         </div>
@@ -46,7 +46,7 @@ const EventCard = ({
           >
           <h3 className="text-2xl font-bold">{backTitle}</h3>
           {backChildren}
-          <button className="bg-blue-500 text-white font-semibold rounded-lg py-2 px-4 hover:bg-blue-600 mt-auto">
+          <button onClick={backButtonAction} className="bg-blue-500 text-white font-semibold cursor-pointer rounded-lg py-2 px-4 hover:bg-blue-600 mt-auto">
             {backButtonText ?? "Register Now"}
           </button>
         </div>

@@ -13,6 +13,11 @@ const EventBlock = ({
       {events.map((event, index) => (
         <EventCard
           key={index}
+          backButtonAction={() => {
+            document.getElementById("registration-section")?.scrollIntoView({
+                behavior: "smooth",
+                });
+          }}
           frontTitle={event.title}
           frontChildren={
             <div className="flex flex-col gap-0.5">

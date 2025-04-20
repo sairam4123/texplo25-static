@@ -5,6 +5,7 @@ import eventJson from "./data/events.json";
 import mceLogo from "./assets/mce.jpg";
 import texploLogo from "./assets/texplo.png";
 import Carousel from "./@components/Carousel";
+import ScrollDownIndicator from "./@components/ScrollDownIndicator";
 
 function App() {
   const events = eventJson.reduce((acc, event) => {
@@ -70,6 +71,7 @@ function App() {
       <h2 className="lg:text-6xl text-3xl font-semibold text-shadow-sm text-shadow-black/50 text-gray-800 mb-4">TEXPLO'25 is Happening</h2>
       <h2 className='lg:text-3xl text-xl text-shadow-sm text-shadow-black/20'>in</h2>
             </>} targetTimestamp={1745361000000} />
+            <ScrollDownIndicator />
         </div>
         
       </section>
@@ -204,7 +206,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="h-screen w-screen snap-start">
+      <section id="registration-section" className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
           <div className="flex flex-col gap-4 w-5/6 max-h-3/4 h-fit md:max-h-6/11 bg-white shadow-2xl rounded-lg items-start-safe p-4">
            <h1 className="text-2xl lg:text-5xl text-center text-balance text-black font-bold">
