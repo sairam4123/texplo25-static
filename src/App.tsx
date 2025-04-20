@@ -20,7 +20,7 @@ function App() {
   }, new Map<string, typeof eventJson[number][]>());
 
   return (
-    <main className="h-screen w-full snap-y snap-mandatory overflow-x-hidden overflow-y-auto">
+    <main id="scrollable-section" className="h-screen w-full snap-y snap-mandatory overflow-x-hidden overflow-y-auto">
       <section className="w-full sticky z-40 top-0">
         <div className="flex h-12 md:h-14 w-full items-center px-4 py-2 gap-4 bg-gradient-to-r from-blue-600 to-purple-600">
           <h1 onClick={

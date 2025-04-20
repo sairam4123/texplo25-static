@@ -18,14 +18,12 @@ interface TimeParts {
 
 const IncreasingCountdown: React.FC<IncreasingCountdownProps> = ({ targetTimestamp, beforeCountdownChildren, afterCountdownChildren, countdownEndMessage }) => {
   const [currentTime, setCurrentTime] = useState<number>(new Date().getTime());
-  console.log(currentTime, targetTimestamp)
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [timeParts, setTimeParts] = useState<TimeParts>({});
 
   useEffect(() => {
     if (!targetTimestamp) return;
   
-    console.log('Setting up countdown...');
   
     clearInterval(intervalRef.current!);
   
