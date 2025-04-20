@@ -4,6 +4,7 @@ import eventJson from "./data/events.json";
 
 import mceLogo from "./assets/mce.jpg";
 import texploLogo from "./assets/texplo.png";
+import Carousel from "./@components/Carousel";
 
 function App() {
   const events = eventJson.reduce((acc, event) => {
@@ -74,7 +75,7 @@ function App() {
       </section>
       <section id="welcome-section" className="h-screen w-screen snap-start">
         <div className="flex h-full flex-col gap-2 w-full items-center justify-center bg-gradient-to-r from-blue-500 to-purple-500">
-          <div className="flex flex-col gap-2 lg:gap-4 w-10/11 lg:w-2/3 h-fit max-h-9/11 lg:max-h-6/7 bg-white shadow-2xl rounded-lg items-start-safe p-4">
+          <div className="flex flex-col gap-2 lg:gap-4 w-10/11 lg:w-2/3 h-fit max-h-9/11 lg:max-h-9/11 bg-white shadow-2xl rounded-lg items-start-safe p-4">
           <h1 className="lg:text-5xl animate-fade-in-up md:text-4xl text-shadow-lg text-3xl text-center text-balance text-black font-bold">
             Welcome to Texplo'25
           </h1>
@@ -85,6 +86,18 @@ function App() {
             <span className="text-blue-500 font-bold"> TEXPLO'25</span> is a tech
             event that brings together students from all over the country.
           </h2>
+          <Carousel
+          images={["/snaps/snaps1.jpg", "/snaps/snaps2.jpg", "/snaps/snaps3.jpg", "/snaps/snaps4.jpg", "/snaps/snaps5.jpg"]}
+            className="w-full h-9/11 rounded-2xl"
+            autoPlay={true}
+            autoPlayInterval={3000}
+            showArrows={false}
+            showDots={false}
+            showThumbnails={false}
+            infiniteLoop={true}
+            transitionDuration={500}
+           >
+            </Carousel>
           </div>
           {/* <p className='lg:text-xl md:text-lg text-sm text-white mt-4'>Join us for an unforgettable experience!</p> */}
           {/* <p className='lg:text-xl text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p> */}
