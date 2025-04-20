@@ -11,6 +11,7 @@ export interface ImageCarouselProps {
   showThumbnails?: boolean;
   infiniteLoop?: boolean;
   transitionDuration?: number;
+  showProgressBar?: boolean;
 }
 
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({
@@ -19,14 +20,15 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   autoPlay = true,
   autoPlayInterval = 3000,
   showArrows = false,
-  showDots = false,
+  showDots = true,
   showThumbnails = false,
+  showProgressBar = true,
   infiniteLoop = true,
   transitionDuration = 500,
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
-
+  const [isPaused, setIsPaused] = useState(false);
   const totalImages = images.length;
 
   // Navigate to next slide
@@ -52,7 +54,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
 
   // Auto Play logic: set up interval if autoPlay is enabled.
   useEffect(() => {
-    if (autoPlay) {
+    if (autoPlay && !isPaused) {
       autoPlayRef.current = setInterval(() => {
         nextSlide();
       }, autoPlayInterval);
@@ -60,7 +62,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
-  }, [autoPlay, autoPlayInterval, currentIndex]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [autoPlay, autoPlayInterval, currentIndex, isPaused]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Render carousel slides
   return (
@@ -74,8 +76,21 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
         }}
       >
         {images.map((image, index) => (
-          <div key={index} className="flex-shrink w-full h-auto">
-            <img src={image} alt={`Slide ${index}`} className="w-full h-auto object-center object-contain" />
+          <div key={index} className="relative  flex-shrink w-full aspect-video h-full flex items-center justify-center overflow-hidden"
+            onClick={() => {
+                setIsPaused((prev) => !prev);
+            }}
+            >
+            <img src={image} alt={`Slide ${index}`} className="w-full transition-transform ease-in-out duration-700 hover:scale-105 h-full object-cover" />
+            {showProgressBar && <div className="absolute bottom-0 left-0 w-full h-2 bg-gray-300">
+                <div
+                className="h-full bg-white transition-[width] ease-linear"
+                style={{
+                    width: currentIndex === index && !isPaused ? "100%" : "0%",
+                    transitionDuration: `${autoPlayInterval-transitionDuration/4}ms`,
+                }}
+                />
+            </div>}
           </div>
         ))}
       </div>

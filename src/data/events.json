@@ -12,12 +12,12 @@
         "dept": "IT",
         "coordinators": [
             {
-                "name": "John Doe",
-                "phoneNo": "1234567890"
+                "name": "Lokeshwaran A",
+                "phoneNo": "9042762239"
             },
             {
-                "name": "Jane Smith",
-                "phoneNo": "0987654321"
+                "name": "Brindha ",
+                "phoneNo": "7010776828"
             }
         ],
         "isTechnical": true
@@ -34,12 +34,12 @@
         "dept": "IT",
         "coordinators": [
             {
-                "name": "John Doe",
-                "phoneNo": "1234567890"
+                "name": "Karthikeyan R",
+                "phoneNo": "8870957957"
             },
             {
-                "name": "Jane Smith",
-                "phoneNo": "0987654321"
+                "name": "Jafer Sheriff",
+                "phoneNo": "9360964478"
             }
         ],
         "isTechnical": true
@@ -61,8 +61,12 @@
         "dept": "IT",
         "coordinators": [
             {
-                "name": "John Doe",
-                "phoneNo": "1234567890"
+                "name": "Pandia Vishnu M",
+                "phoneNo": "9025366992"
+            },
+            {
+                "name": "Agatheeshwaran",
+                "phoneNo": "9025346765"
             }
         ],
         "isTechnical": true
@@ -77,12 +81,12 @@
         "dept": "IT",
         "coordinators": [
             {
-                "name": "John Doe",
-                "phoneNo": "1234567890"
+                "name": "Abishek Ilambarithi",
+                "phoneNo": "7845058372"
             },
             {
-                "name": "Jane Smith",
-                "phoneNo": "0987654321"
+                "name": "Ajay Prakathish LR",
+                "phoneNo": "9600875207"
             }
         ],
         "more_info": null,

@@ -9,7 +9,7 @@ const EventBlock = ({
 }) => {
     return <div className="flex flex-col py-1 drop-shadow-lg bg-white/20 rounded-lg snap-start w-full h-full">
     <h2 className="text-2xl/tight px-6 text-black font-semibold">Department of {deptName}</h2>
-    <div className="grid grid-rows-1 snap-mandatory snap-x pb-4 grid-flow-col px-4 overflow-hidden auto-cols-[90%] md:auto-cols-[46%] lg:auto-cols-[31%] overflow-x-auto gap-2 lg:gap-8 w-full h-full">
+    <div className="grid grid-rows-1 snap-mandatory snap-x pb-4 grid-flow-col overflow-hidden scroll-mx-2 auto-cols-[95%] md:auto-cols-[46%] lg:auto-cols-[31%] overflow-x-auto gap-2 lg:gap-8 w-full h-full">
       {events.map((event, index) => (
         <EventCard
           key={index}
