@@ -87,7 +87,7 @@ function App() {
             event that brings together students from all over the country.
           </h2>
           <Carousel
-          images={["/snaps/snaps1.jpg",  "/snaps/snaps4.jpg", "/snaps/snaps5.jpg", "snaps/snaps6.jpg", "/snaps/snaps10.jpg", "/snaps/snaps8.jpg", "/snaps/snaps7.jpg",]}
+          images={["/snaps/snaps1.jpg",  "/snaps/snaps4.jpg", "/snaps/snaps5.jpg", "snaps/snaps6.jpg", "/snaps/snaps10.jpg", "/snaps/snaps11.jpg", "/snaps/snaps8.jpg", "/snaps/snaps7.jpg",]}
             className="w-full h-9/11 rounded-2xl"
             autoPlay={true}
             autoPlayInterval={3000}
